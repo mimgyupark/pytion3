@@ -1,0 +1,15 @@
+name=input('파일을 입력하시오')#읽어올 파일을 name변수로 설정
+handle=open(name)#name 변수의 파일을 연다
+
+counts=dict()#카운트라는 변수에 빈 딕셔너리 생성
+for line in handle:#line 이라는 변수에 파일을 출력
+    words=line.split()#파일을 띄어쓰기 단위로 나눠서 words안에 넣기
+    for word in words:#나눈 파일을 word라는 변수안에 넣기
+        counts[word]=counts.get(word,0)+1 # key를 word변수의 단어로 추가 하며 초기값 0 설정 # key가 같을때 # value즉 값이 1씩 증가
+bigcount=None#big count값을 0으로 전환
+bigwords=None#big words값을 0으로 전환
+for word,count in counts.items():#키와 값을 출력함
+    if bigcount is None or count>=bigcount: #big카운트 값이 읽고있는 count보다 큰가 아닌가확인후
+        bigwords=word #큰걸 인지하고 그값을 big 월드,카운트로 바꾼다
+        bigcount=count
+print(bigwords,bigcount)
