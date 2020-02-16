@@ -1,0 +1,110 @@
+#파이썬 10일차 정리 2
+#문자열 정리
+str_1='hello'
+str_2="박민규"
+abc=(str_1+str_2)#hello 박민규
+print(abc)
+str_3=123
+x=int(str_3)+1
+print("______________________________")
+print(x)
+name=input('당신의 이름은 무었입니까?')
+print('hello',name)
+print("______________________________")
+fruit='banana'
+letter=fruit[1]
+print(letter)
+print(len(fruit))#len 은 갯수를 알려준다
+print("______________________________")
+index=0
+while index<len(fruit): #fruit= banana
+    letter=fruit[index]
+    print(letter)
+    index=index+1
+print("______________________________")
+count=0
+for letter in fruit:
+    if letter=='a':#a의 갯수를 샌다
+        count=count+1
+print(count)
+print("______________________________")
+greet='Hello Bob'
+nsar=greet.replace('o','x')#replace 는 단어를 바꾼다
+nba=greet.find('b')
+print(nsar)
+print(nba)
+print("______________________________")
+#파일 열기 시 open(파일명, 모드) 함수 사용 파일을 읽으려면 ‘r’을, 파일에 쓰려면 ‘w’를 입력
+#fhand = open('mbox.txt')
+#print(fhand)
+#개행문자
+stuff='HELLO \nword'
+print(stuff)
+print("______________________________")
+
+#리스트 활용하기
+friends = ['Joseph', 'Glenn', 'Sally']
+for friend in friends :
+    print('Happy New Year:', friend)
+print('Done!')
+print("______________________________")
+stuff = list()
+stuff.append('book')
+stuff.append(99)
+print("______________________________")
+nums = [3, 41, 12, 9, 74, 15]
+print(len(nums))#글짜 갯수
+print(max(nums))#제일 큰수
+print(min(nums))#제일 작은수
+print(sum(nums))#합
+print(sum(nums)/len(nums))#평균
+print("______________________________")
+numlist = list()
+print('done 을 입력하면 프로그램이 종료된다')
+while True :
+    inp = input('Enter a number: ')# 입력받은 숫자를 inp에 넣는다.
+    if inp == 'done' : break #done 을 입력하면 프로그램을 종료한다
+    value = float(inp)#입력받은수를 숫자로 변경한다
+numlist.append(value)#리스트에 입력받은것을 추가한다
+average = sum(numlist) / len(numlist)#평균을 구한다
+print('Average:', average)
+print("______________________________")
+#split 배우기
+abc='안녕하세요 저는 박민규 입니다.'
+abb=abc.split()
+print(abb)
+print(len(abb))
+print("______________________________")
+#딕셔너리 공부하기 dict() ={}
+purse = dict()#딕셔너리 변수만들기
+purse['money'] = 12 #purse라는 변수안에 money라는 키 값을 12로 사용
+purse['candy'] = 3  #purse라는 변수안에 candy라는 키 값을 3로 사용
+purse['tissues'] = 75 #purse라는 변수안에 tissues라는 키 값을 75로 사용
+print(purse)
+print(purse['candy'])
+purse['candy'] = purse['candy'] + 2 #candy라는 키에 값에 2를 더함
+print(purse)
+print("______________________________")
+#리스트에 있는 단어들을 새주는 프로그램
+counts = dict()
+names = ['csev', 'cwen', 'csev', 'zqian', 'cwen']
+for name in names :
+    if name not in counts:# 만약 숫자가 없으면 처음부터 시작하는것이기때문에  #딕셔너리 추가하는 식
+        counts[name] = 1 #카운트는 1로 추가한다.
+    else :
+        counts[name] = counts[name] + 1 #원래 있던것은 +1을 사용한다
+print(counts)
+#get 을 사용한 딕셔너리 카운트
+counts = dict()
+names = ['csev', 'cwen', 'csev', 'zqian', 'cwen']
+for name in names :
+    counts[name] = counts.get(name, 0) + 1
+print(counts)
+#튜플 =()  리스트=[]  딕셔너리={}  튜플에서 자주쓰이는것 items() , sorted()
+d = {'a':10, 'b':1, 'c':22}
+t = sorted(d.items())
+for k, v in sorted(d.items()):
+    print(k, v)
+
+
+
