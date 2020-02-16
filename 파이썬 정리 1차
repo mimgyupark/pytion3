@@ -1,0 +1,141 @@
+#파이썬10일차 까지 정리 
+
+
+#1.print()  ==값을 보여준다
+print('박민규')#박민규
+print("__________________________________________________________________")
+print("박민규")#박민규
+print("__________________________________________________________________")
+a=("박민규")
+print(a)#박민규
+print("__________________________________________________________________")
+x=1
+print(x)#1
+x=x+1
+print(x)#2
+#2.int ,float ==자료 형으로 변환
+print("__________________________________________________________________")
+i=42
+type(i) #<class 'int'>
+print(float(42)+132) #174.0 float 소숫점 자리 까지 
+print(int(42)+132) #174 int 는 정수자리까지만
+sval='123'
+eval=int(sval) # int 를 넣지 않으면 오류가 뜬다
+print(eval+1) #124 출력
+#3.input  input 으로 입력문을 받을수있다
+print("__________________________________________________________________")
+num=input('숫자 아무거나 입력하시오')
+print(num)
+#연습문제 :input 을 활용한 미국 엘레베이터 층 프로그램 #한국에 +1
+print("__________________________________________________________________")
+inp=input('층을 입력하시오')
+
+usf=int(inp)+1
+print('미국 층은',usf,'입니다.')
+#연습문제 :input 을 이용한 당일 급여 계산기
+print("__________________________________________________________________")
+time=int(input('당신이 일한시간 을 입력하시오'))
+pay=float(input('당신의 급여를 입력하시오'))
+timepay=(time*pay)
+print(timepay)
+#4.if,else,elif :조건문을 활용 마지막에 : 꼭 들어가야함
+print("__________________________________________________________________")
+k=5
+if k <10:
+    print('smaller')
+elif k>1:
+    print('biiger')
+else :
+    print("숫자가 같습니다")
+print("끝났습니다.")
+#5. try,except #보험을 걸어두는거다 try가 안되면 exepct가 된다\
+print("__________________________________________________________________")
+yournumber=input('당신의 번호를 입력하시오')
+try:
+    문자식의번호=int(yournumber)
+except:
+    문자식의번호=-1
+if 문자식의번호>-1:
+    print('당신의 번호는',문자식의번호,'입니다.')
+else:
+    print('번호가 틀렸습니다')
+#연습문제 40시간을 초과한 시간의 시급을 1.5배하여 급여 계산 프로그램 만들기
+print("__________________________________________________________________")
+print("40시간을 초과한 시간의 시급을 1.5배하여 급여 계산 프로그램 만들기")
+try:
+    wh=int(input("당신이 일한 시간을 적으시오"))#일한시간
+    wp=float(input("당신이 받는 페이를 적으시오"))#급여
+except:
+    print('에러입니다 숫자로 입력해주십쇼')
+    quit()
+if wh>40:
+    원래급여=wh*wp
+    추가근무=(wh-40)*(wp*0.5)
+    whp=추가근무+원래급여
+    print('당신의 급여는',whp,'입니다.')
+print("__________________________________________________________________")
+#def :저장 그리고재사용
+def all():
+    print('hello')#정의는 하지만 본문을 실행하지 않는다
+    print('안녕')
+all() #def 실행
+print('zip')
+all()#def 실행
+print("__________________________________________________________________")
+def greet(rang):
+    if rang=='es':
+        print('안뇽')
+    elif rang=='er':
+        print('hello')
+greet('es')
+greet('er')
+def greet(lang):
+    if lang == 'es':
+        return 'Hola'
+    elif lang == 'fr':
+        return 'Bonjour'
+    else:
+        return 'Hello'
+
+print(greet('en'),'Glenn')
+print(greet('es'),'Sally')
+print(greet('fr'),'Michael')
+print("__________________________________________________________________")
+#연습문제 로또 프로그램 만들기
+import random
+def lotto():
+    return random.sample(range(1,45),6)
+for i in range(5):
+    print(sorted(lotto()))
+
+
+#while문 사용 무한 루프 while 문뒤엔 : 이 필요함
+aaa=5
+while aaa<10:
+    print(aaa)
+    aaa=aaa+1
+#for 문을 사용한 유한루프 구구단 for 문뒤엔 : 이 필요함
+for a in range(2, 10, 1) :
+     for k in range(1, 10, 1) :
+        print("%d*%d =%d"%(a,k,a*k))
+#for 문을 사용한 합 평균 구하기
+count = 0
+sum = 0
+print('Before', count, sum)
+for value in [9, 41, 12, 3, 74, 15] :
+count = count + 1
+sum = sum + value
+print(count, sum, value)
+print('After', count, sum, sum / count)
+    
+
+
+
+
+
+    
+
+
+
+
+
