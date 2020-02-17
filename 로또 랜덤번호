@@ -1,0 +1,9 @@
+import random
+
+def lotto():
+
+    return random.sample(range(1,45),6)
+
+for i in range(5):
+
+    print(sorted(lotto()))
