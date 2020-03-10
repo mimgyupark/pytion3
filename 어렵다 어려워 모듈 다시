@@ -1,0 +1,34 @@
+#모듈 사용법을 정확하게 모르겠다 대화형 여는법,파일을 찾는법 ㅜㅜ
+#mod2.py
+PI=3.141592
+class Math:
+    def solv(self,r):
+        return PI*(r**2)
+def add(a,b):
+    return a+b
+#modtest.py
+import mod2
+result=mod2.add(3,4)
+print(result)
+ #패키지 일단 이해가 안가니 다음 을 해보자 우와 다오류 뜬다 ㅎㅎ하는법 다시 공부하자 
+ game\
+    __init__.py
+    sound\
+        __init__.py
+        echo.py
+        wav.py
+    graphic\
+        __init__.py
+        screen.py
+        render.py
+    play\
+        __init__.py
+        run.py
+        test.py
+#echo파일
+#echo.py
+def echo_test():
+    print("echo")
+#render.py
+def render_test():
+    print("render")
